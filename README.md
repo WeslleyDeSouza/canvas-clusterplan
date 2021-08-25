@@ -1,4 +1,4 @@
-# Agenda Clusterplan - 2019
+# Touch optimized Agenda/Clusterplan - 2019
 
 # Libs
 - PixiJS
