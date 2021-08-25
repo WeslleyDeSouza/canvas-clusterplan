@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda | View</title>
+
+    <head>
+        <meta charset="utf-8">
+        <base href="/">
+
+        <!--Web-Mobile Meta Tag-->
+        <link rel="manifest" href="./manifest.json">
+        <link rel="icon"       type="image/x-icon" href="favicon.ico">
+        <meta name="developer" content="Weslley">
+        <!--Webnm install-Mobile Meta Tag-->
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1,user-scalable = no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="transparent">
+        <link rel="apple-touch-icon" href="favicon.ico" sizes="120x120">
+    </head>
+
+    <style>
+        html,body{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/de-ch.js"></script>
+<script src="../../dist/main.min.js"></script>
+
+
+</body>
+
+<style>
+    html{
+        overscroll-behavior-x:none;
+    }
+    canvas:nth-of-type(2){
+     /*   display: none; */
+    }
+    body{
+        touch-action: none;
+    }
+</style>
+
+<script>
+    ClusterPlan = ClusterPlan.default
+</script>
+
+<div id="calContainer">
+
+</div>
+
+<canvas style="position: fixed;z-index: -1" id="shadow" ></canvas>
+
+
+<script name="sketch">
+
+    var shadow    = document.getElementById('shadow');
+    var ctxSX     = shadow.getContext('2d');
+
+    const shadows   = {
+        x:  new Image(),
+        y:  new Image()
+    }
+
+    generateXShadow = () =>{
+
+        ctxSX.clearRect(0, 0, 20, 120);
+        shadow.width         = 2000;
+        shadow.height        =  9;
+        ctxSX.rect(0, 0, shadow.width, 1);
+        ctxSX.fillStyle      = 'grey'
+        ctxSX.shadowColor    = 'black';
+        ctxSX.shadowBlur     = 8;
+
+
+        ctxSX.fill();
+
+
+
+        shadows.x.src = shadow.toDataURL();
+        //ctxSX.clearRect(0, 0, 2000, 10);
+    }
+    generateYShadow = () =>{
+        ctxSX.clearRect(0, 0, 20, 120);
+        shadow.width  = 8;
+        shadow.height = 2000;
+
+        ctxSX.rect(0,0,1, shadow.height);
+
+        ctxSX.shadowColor    = 'black';
+        ctxSX.shadowBlur     = 8;
+
+        ctxSX.fill();
+        ctxSX.fill();
+
+        shadows.y.src = shadow.toDataURL()
+        ctxSX.clearRect(0, 0, 10, 2000);
+    }
+
+    generateXShadow();
+    generateYShadow();
+
+    window.getShadow = (x)=>{
+        return shadows[x]
+    }
+
+    const scp        = new ClusterPlan({
+        autoScroll  :true,
+
+       // indexedDB:  'test',
+
+        /**
+         * Base View
+         * */
+
+        head:{
+            formatDate:          ['DD','[ ]ddd'],
+            fontStyles:          ["600 20pt sans-serif","100 11pt sans-serif"],
+            subTextBelow:true,
+        },
+        resource:{
+            resourceType:        'timeSlot',
+            slotDuration:         0.166,
+            startTime:           '08:00',
+            endTime:             '19:00',
+        },
+
+
+       // disableHover:        true,
+       // scrollOnWeel:        true,
+       // reAppendOnDestroy:   true,
+        //headClickZoom:       window['isMobile'],
+       // headerWeekRow:       !window['isMobile'],
+        lang:                moment.locale(),
+    },null);
+    window.cp = scp;
+    scp.render();
+
+
+    scp.addBackgroundEvents([
+            {
+                calendarId:1,
+                "didInit": true,
+                "dow": [
+                    2
+                ],
+                "start": "08:00",
+                "end": "19:00",
+                "height": 11,
+                "minKey": 1030,
+                color:'#d35400'
+            },
+            {
+                "didInit": true,
+                "dow": [
+                    3
+                ],
+                "start": "08:00",
+                "end": "19:00",
+                "height": 11,
+                "minKey": 1030
+            },
+            {
+                "didInit": true,
+                "dow": [
+                    4
+                ],
+                "start": "08:00",
+                "end": "19:00",
+                "height": 11,
+                "minKey": 1030
+            },
+            {
+                "didInit": true,
+                "dow": [
+                    5
+                ],
+                "start": "08:00",
+                "end": "19:00",
+                "height": 11,
+                "minKey": 1030
+            },
+            {
+                "didInit": true,
+                "dow": [
+                    6
+                ],
+                "start": "08:30",
+                "end": "18:00",
+                "height": 9.5,
+                "minKey": 1090
+            }
+        ])
+
+
+    scp.ON.head.click      = (r,m,full) => console.log(r,m,full);
+    scp.ON.event.hover     = (c)=>console.log(c,'hover');
+    scp.ON.event.click     = (c)=>console.log(c,'click');
+    scp.ON.event.select    = (c)=>console.log(c,'select');
+    scp.ON.event.dragstart = (c)=>console.log(c,'dragstart');
+    scp.ON.event.drop      = (c,o)=>{
+        //console.log(c,'drop')
+        console.log(o.resourceId, '   ',o.start,'>',c.start,o.diffDay,o.diffMin)
+    };
+    /*
+    scp.ON.index.headIndexChanged = (e,inverval)=>{
+        console.log(e.format('MMM'),e.format('DD.MM.YY'),inverval)
+    }
+     */
+    addEvents = ()=>{
+        scp.addEvents([
+            {
+                "id":           '92601',
+                "calendarId":   5,
+                "resourceId":   1,
+                "resourceIds":  [],
+                "employeeId":   1,
+                "start":        "2020-06-25 17:45:00",
+                "end":          "2020-06-25 22:15:00",
+                "color":        "#F3C13A",
+                "description":  "",
+                "profiles":     [
+                    {
+                        "profileId": 1502813175,
+                        "phone": "0789008505",
+                        "firstName": "weslley",
+                        "lastName": "de souza",
+                        "birthday": "1995-07-18",
+                        "hasBirthDay": false
+                    }
+                ],
+                "finalized":    0,
+                "privacy":      0,
+                "url": null,
+                "price": null,
+                "title": "Meeting",
+                "state": 0,
+                "services": [],
+                "hasBirthDay": false,
+                "employeeAccepted": null
+            }
+        ])
+    }
+
+
+  //setTimeout(()=>  addEvents(),1500);
+
+</script>
+
+
+
+
+</html>
