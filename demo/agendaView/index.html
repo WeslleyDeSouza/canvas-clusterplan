@@ -78,12 +78,7 @@
         ctxSX.fillStyle      = 'grey'
         ctxSX.shadowColor    = 'black';
         ctxSX.shadowBlur     = 8;
-
-
         ctxSX.fill();
-
-
-
         shadows.x.src = shadow.toDataURL();
         //ctxSX.clearRect(0, 0, 2000, 10);
     }
@@ -91,15 +86,11 @@
         ctxSX.clearRect(0, 0, 20, 120);
         shadow.width  = 8;
         shadow.height = 2000;
-
         ctxSX.rect(0,0,1, shadow.height);
-
         ctxSX.shadowColor    = 'black';
         ctxSX.shadowBlur     = 8;
-
         ctxSX.fill();
         ctxSX.fill();
-
         shadows.y.src = shadow.toDataURL()
         ctxSX.clearRect(0, 0, 10, 2000);
     }
@@ -112,9 +103,8 @@
     }
 
     const scp        = new ClusterPlan({
-        autoScroll  :true,
-
-       // indexedDB:  'test',
+          autoScroll  :true,
+         // indexedDB:  'ClusterPlan',
 
         /**
          * Base View
@@ -122,17 +112,16 @@
 
         head:{
             formatDate:          ['DD','[ ]ddd'],
-            fontStyles:          ["600 20pt sans-serif","100 11pt sans-serif"],
+            fontStyles:          ["600 20pt sans-serif", "100 11pt sans-serif"],
             subTextBelow:true,
+            subTitleOffsetY:50,
         },
         resource:{
             resourceType:        'timeSlot',
             slotDuration:         0.166,
-            startTime:           '08:00',
-            endTime:             '19:00',
+            startTime:           '00:00',
+            endTime:             '23:59',
         },
-
-
        // disableHover:        true,
        // scrollOnWeel:        true,
        // reAppendOnDestroy:   true,
@@ -214,42 +203,37 @@
         console.log(e.format('MMM'),e.format('DD.MM.YY'),inverval)
     }
      */
-    addEvents = ()=>{
-        scp.addEvents([
-            {
-                "id":           '92601',
-                "calendarId":   5,
-                "resourceId":   1,
-                "resourceIds":  [],
-                "employeeId":   1,
-                "start":        "2020-06-25 17:45:00",
-                "end":          "2020-06-25 22:15:00",
-                "color":        "#F3C13A",
-                "description":  "",
-                "profiles":     [
-                    {
-                        "profileId": 1502813175,
-                        "phone": "0789008505",
-                        "firstName": "weslley",
-                        "lastName": "de souza",
-                        "birthday": "1995-07-18",
-                        "hasBirthDay": false
-                    }
-                ],
-                "finalized":    0,
-                "privacy":      0,
-                "url": null,
-                "price": null,
-                "title": "Meeting",
-                "state": 0,
-                "services": [],
-                "hasBirthDay": false,
-                "employeeAccepted": null
-            }
-        ])
-    }
-
-
+    scp.addEvents([
+        {
+            "id":           '92601',
+            "calendarId":   5,
+            "resourceId":   1,
+            "resourceIds":  [],
+            "employeeId":   1,
+            "start":        "2021-08-25 17:45:00",
+            "end":          "2021-08-25 22:15:00",
+            "color":        "#F3C13A",
+            "description":  "",
+            "profiles":     [
+                {
+                    "profileId": 1502813175,
+                    "phone": "0789008505",
+                    "firstName": "weslley",
+                    "lastName": "de souza",
+                    "hasBirthDay": false
+                }
+            ],
+            "finalized":    0,
+            "privacy":      0,
+            "url": null,
+            "price": null,
+            "title": "Meeting",
+            "state": 0,
+            "services": [],
+            "hasBirthDay": false,
+            "employeeAccepted": null
+        }
+    ])
   //setTimeout(()=>  addEvents(),1500);
 
 </script>

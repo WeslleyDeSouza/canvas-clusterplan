@@ -80,28 +80,18 @@
         ctxSX.fillStyle      = 'grey'
         ctxSX.shadowColor    = 'black';
         ctxSX.shadowBlur     = 8;
-
-
         ctxSX.fill();
-
-
-
         shadows.x.src = shadow.toDataURL();
-        //ctxSX.clearRect(0, 0, 2000, 10);
     }
     generateYShadow = () =>{
         ctxSX.clearRect(0, 0, 20, 120);
         shadow.width  = 8;
         shadow.height = 2000;
-
         ctxSX.rect(0,0,1, shadow.height);
-
         ctxSX.shadowColor    = 'black';
         ctxSX.shadowBlur     = 8;
-
         ctxSX.fill();
         ctxSX.fill();
-
         shadows.y.src = shadow.toDataURL()
         ctxSX.clearRect(0, 0, 10, 2000);
     }
@@ -116,14 +106,10 @@
     const scp        = new ClusterPlan(
         {
         autoScroll  :true,
-
-
-       // indexedDB:  'test',
-
+       // indexedDB:  'ClusterPlan',
         /**
          * Base View
          * */
-
         head:{
             formatDate:          ['DD','[ ]ddd'],
             fontStyles:          ["600 20pt sans-serif","100 11pt sans-serif"],
