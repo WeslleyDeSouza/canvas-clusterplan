@@ -5,8 +5,8 @@ Agenda and resource planner for touch devices.
 https://fullcalendar.io/docs/
   </p>
 <br>
-<br>
-This was one of my first JS Projects 🧒
+
+This was one of my first JS Projects 🧒🥲
 <br>
 
 # Used Libs
