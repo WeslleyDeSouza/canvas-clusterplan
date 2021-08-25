@@ -1,4 +1,4 @@
-# Touchscreen optimized Agenda/Clusterplan - 2019
+# 2019 Touchscreen optimized Agenda/Clusterplan
 Agenda and resource planner for touch devices.
 <br>
 <p>Inspired by:<p>
