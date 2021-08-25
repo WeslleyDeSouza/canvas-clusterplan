@@ -180,18 +180,14 @@
             }
         ])
 
-
-
-    /*
-    scp.ON.index.headIndexChanged = (e,inverval)=>{
-        console.log(e.format('MMM'),e.format('DD.MM.YY'),inverval)
-    }
-     */
+    let _today = moment().format('YYYY-MM-DD')
     scp.addEvents([
         {
             "id":           '92601',
-            "start":        "2021-08-26 17:45:00",
-            "end":          "2021-08-26 22:15:00",
+            "resourceId":   1,
+            calendarId:1,
+            "start":        _today+"10:45:00",
+            "end":          _today+"12:15:00",
             "color":        "#F3C13A",
             "description":  "",
             "profiles":     [
@@ -211,8 +207,69 @@
             "hasBirthDay": false,
             "employeeAccepted": null
         }
-    ])
-  //setTimeout(()=>  addEvents(),1500);
+    ]);
+    scp.addEvents([
+        {
+            "id":           '92601',
+            "resourceId":   1,
+            calendarId:1,
+            "start":        _today+"18:30:00",
+            "end":          _today+"20:00:00",
+            "color":        "#933af3",
+            "description":  "",
+            "profiles":     [
+                {
+                    "profileId": 1502813175,
+                    "firstName": "weslley",
+                    "lastName": "de souza",
+                }
+            ],
+            "finalized":    0,
+            "privacy":      0,
+            "url": null,
+            "price": null,
+            "title": "Study",
+            "state": 0,
+            "services": [],
+            "hasBirthDay": false,
+            "employeeAccepted": null
+        }
+    ]);
+    scp.addEvent({
+        "id": 7419,
+        "calendarId": 1,
+        "companyId": 1,
+        "resourceId": 1,
+        "resourceIds": [],
+        "employeeId": 1,
+        "start": _today+"08:15:00",
+        "end": _today+"08:45:00",
+        "fullDay": false,
+        "title": "Massage",
+        "color": "#0190fe",
+        "description": "",
+        "profiles": [
+            {
+                "profileId": 1517655494,
+                "pClassId": null,
+                "firstName": "Claudia",
+                "lastName": "Arias",
+
+            }
+        ],
+
+        "finalized": 2,
+        "state": 2,
+        "privacy": 0,
+        "url": null,
+        "price": 60,
+        "services": [],
+        "rDelayMin": 0,
+        "groupId": null,
+        "isOutlook": false,
+        "isGoogle": false
+    })
+
 
 </script>
 
