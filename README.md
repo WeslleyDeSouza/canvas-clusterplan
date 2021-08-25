@@ -6,9 +6,6 @@ https://fullcalendar.io/docs/
   </p>
 <br>
 
-This was one of my first JS Projects 🧒🥲
-<br>
-
 # Used Libs
 - PixiJS
 - Moment
