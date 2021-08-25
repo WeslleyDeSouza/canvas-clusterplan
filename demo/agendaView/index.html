@@ -359,7 +359,34 @@
         "isGoogle": false
     });
 
-
+    let _tom = moment().add(1,'day').format('YYYY-MM-DD')
+    scp.addEvents([
+        {
+            "id":           '9260w11',
+            "resourceId":   1,
+            calendarId:1,
+            "start":        _tom+"T09:45:00",
+            "end":          _tom+"T12:15:00",
+            "color":        "#3251ae",
+            "description":  "",
+            "profiles":     [
+                {
+                    "profileId": 1502813175,
+                    "firstName": "weslley",
+                    "lastName": "de souza",
+                }
+            ],
+            "finalized":    0,
+            "privacy":      0,
+            "url": null,
+            "price": null,
+            "title": "JS Dev.",
+            "state": 0,
+            "services": [],
+            "hasBirthDay": false,
+            "employeeAccepted": null
+        }
+    ]);
     scp.goToDate()
 
 </script>
