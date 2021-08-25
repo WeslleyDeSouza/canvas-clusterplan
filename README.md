@@ -3,11 +3,10 @@ Agenda and resource planner for touch devices.
 <br>
 <p>Inspired by:<p>
 https://fullcalendar.io/docs/
+  
 <br>
 <br>
----
 This was one of my first JS Projects 🧒
---- 
 <br>
 
 # Used Libs
