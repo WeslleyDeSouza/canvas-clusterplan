@@ -12,6 +12,7 @@ This was one of my first JS Projects 🧒🥲
 # Used Libs
 - PixiJS
 - Moment
+- dexie
 
 # Demo
 https://weslleydesouza.github.io/canvas-clusterplan/demo/agendaView/index.html
