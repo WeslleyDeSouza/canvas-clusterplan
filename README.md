@@ -4,9 +4,13 @@ Agenda and resource planner for touch devices.
 Inspired by:
 https://fullcalendar.io/docs/
 <br>
+<br>
+---
+This was one of my first JS Projects 🧒
+--- 
+<br>
 
-
-# Libs
+# Used Libs
 - PixiJS
 - Moment
 
@@ -18,5 +22,5 @@ https://weslleydesouza.github.io/canvas-clusterplan/demo/agendaView/index.html
 - https://mymovit.com/
 - https://silkskin.ch/
 - http://onda-latina.ch/
-- http://www.taketime.ch/
+- http://www.taketime.ch/ <br>
 and more ..
