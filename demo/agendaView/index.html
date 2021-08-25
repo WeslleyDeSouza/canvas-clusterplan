@@ -31,8 +31,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/de-ch.js"></script>
-<script src="/canvas-clusterplan/dist/main.min.js"></script>
 
+<script src="https://weslleydesouza.github.io/canvas-clusterplan/dist/main.min.js"></script>
+
+<!--
+<script src="/canvas-clusterplan/dist/main.min.js"></script>
+-->
 
 </body>
 
@@ -104,6 +108,7 @@
 
     const scp        = new ClusterPlan({
           autoScroll  :true,
+          indexedDB:false,
          // indexedDB:  'ClusterPlan',
 
         /**
@@ -114,7 +119,7 @@
             formatDate:          ['DD','[ ]ddd'],
             fontStyles:          ["600 20pt sans-serif", "100 11pt sans-serif"],
             subTextBelow:true,
-            subTitleOffsetY:50,
+            subTitleOffsetY:12,
         },
         resource:{
             resourceType:        'timeSlot',
@@ -122,11 +127,6 @@
             startTime:           '00:00',
             endTime:             '23:59',
         },
-       // disableHover:        true,
-       // scrollOnWeel:        true,
-       // reAppendOnDestroy:   true,
-        //headClickZoom:       window['isMobile'],
-       // headerWeekRow:       !window['isMobile'],
         lang:                moment.locale(),
     },null);
     window.cp = scp;
@@ -206,21 +206,15 @@
     scp.addEvents([
         {
             "id":           '92601',
-            "calendarId":   5,
-            "resourceId":   1,
-            "resourceIds":  [],
-            "employeeId":   1,
-            "start":        "2021-08-25 17:45:00",
-            "end":          "2021-08-25 22:15:00",
+            "start":        "2021-08-26 17:45:00",
+            "end":          "2021-08-26 22:15:00",
             "color":        "#F3C13A",
             "description":  "",
             "profiles":     [
                 {
                     "profileId": 1502813175,
-                    "phone": "0789008505",
                     "firstName": "weslley",
                     "lastName": "de souza",
-                    "hasBirthDay": false
                 }
             ],
             "finalized":    0,
