@@ -226,21 +226,6 @@
         }
     ])
 
-
-    scp.ON.head.click      = (r,m,full) => full?console.log(r,m,full):null;
-    scp.ON.event.hover     = (c)=>console.log(c,'hover');
-    scp.ON.event.click     = (c)=>console.log(c,'click');
-    scp.ON.event.select    = (c)=>console.log(c,'select');
-    scp.ON.event.dragstart = (c)=>console.log(c,'dragstart');
-    scp.ON.event.drop      = (c,o)=>{
-        //console.log(c,'drop')
-        console.log(o.resourceId, '   ',o.start,'>',c.start,o.diffDay,o.diffMin)
-    };
-    /*
-    scp.ON.index.headIndexChanged = (e,inverval)=>{
-        console.log(e.format('MMM'),e.format('DD.MM.YY'),inverval)
-    }
-     */
     addEvents = (all = true)=>{
         scp.addEvents([
             {
