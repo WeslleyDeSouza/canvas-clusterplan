@@ -1,9 +1,9 @@
 # 2019 Touchscreen optimized Agenda/Clusterplan
 Agenda and resource planner for touch devices.
 <br>
-<p>Inspired by:<p>
+<p>Inspired by:
 https://fullcalendar.io/docs/
-  
+  </p>
 <br>
 <br>
 This was one of my first JS Projects 🧒
