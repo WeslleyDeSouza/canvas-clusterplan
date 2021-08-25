@@ -1,7 +1,7 @@
 # Touchscreen optimized Agenda/Clusterplan - 2019
 Agenda and resource planner for touch devices.
 <br>
-Inspired by:
+<p>Inspired by:<p>
 https://fullcalendar.io/docs/
 <br>
 <br>
