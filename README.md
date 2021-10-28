@@ -16,7 +16,6 @@ https://weslleydesouza.github.io/canvas-clusterplan/demo/agendaView/index.html
 
 #Used by
 - https://www.baertschi.ch/
-- https://mymovit.com/
 - https://silkskin.ch/
 - http://onda-latina.ch/
 - http://www.taketime.ch/ <br>
