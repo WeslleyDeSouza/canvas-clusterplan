@@ -439,7 +439,9 @@
             "employeeAccepted": null
         }
     ]);
-    scp.addEvents([
+   
+    setTimeout(()=>{
+        scp.addEvents([
     {
         "id": 3072,
         "calendarId": 1,
@@ -525,7 +527,9 @@
         "isGoogle": false
     }
 ])
-    scp.goToDate()
+    },1000);
+    
+    scp.goToDate();
 
 </script>
 
