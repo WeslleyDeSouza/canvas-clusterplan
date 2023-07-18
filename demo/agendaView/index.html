@@ -528,6 +528,66 @@
     }
 ])
     },1000);
+
+
+
+
+
+if(true){
+            cp.addEvents([{
+                id:'1',
+                start:'2022-12-30T12:00',
+                end:'2022-12-30T13:00',
+                color:'red'
+            }])
+            cp.addEvents([{
+                id:'2',
+                start:'2022-12-24T12:00',
+                end:'2022-12-24T13:00',
+                color:'red'
+            }])
+
+            const startDate = moment().startOf('month');
+            const duration = moment.duration({ hours: 1 });
+            function getRandomColor() {
+                const colors = [
+                    '#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db',
+                    '#2980b9', '#9b59b6', '#8e44ad', '#34495e', '#2c3e50',
+                    '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c',
+                    '#c0392b', '#ecf0f1', '#bdc3c7', '#95a5a6', '#7f8c8d',
+                    '#ff0000', '#ff6f00', '#ffab00', '#ffc400', '#ffd600',
+                    '#008000', '#0062b1', '#512da8', '#9c27b0', '#e91e63'
+                ];
+                const randomIndex = Math.floor(Math.random() * colors.length);
+                return colors[randomIndex];
+            }
+
+            for (let i = 0; i < 500; i++) {
+                const start = moment(startDate)
+                    .add(Math.floor(Math.random() * 30), 'days') // Zufälliger Tag innerhalb des Monats
+                    .add(Math.floor(Math.random() * 24), 'hours') // Zufällige Stunde
+                    .add(Math.floor(Math.random() * 45), 'minutes') // Zufällige Minute
+                    .minutes(Math.ceil(moment().minutes() / 15) * 15)
+                    .format('YYYY-MM-DDTHH:mm');
+
+                const end = moment(start)
+                    .add(duration)
+                    .format('YYYY-MM-DDTHH:mm');
+
+                const event = {
+                    id: 10 + i,
+                    start: start,
+                    end: end,
+                    color: getRandomColor()
+                };
+
+                scp.addEvents([event])
+            }
+
+            scp.addEvent({calendarId:1,color:"#9393f1",end:"2023-01-01T20:40",id:"9790",resourceId:1,start:"2022-12-31T05:00"})
+        }
+
+    
     
     scp.goToDate();
 
